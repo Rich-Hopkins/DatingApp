@@ -25,5 +25,6 @@ namespace API.Entities
         public int GetAge(){
             return DateOfBirth.CalculateAge();
         }
+        
     }
 }
