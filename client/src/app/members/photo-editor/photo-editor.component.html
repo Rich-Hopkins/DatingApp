@@ -5,8 +5,11 @@
              alt="{{photo.url}}"
              class="img-thumbnail p-1">
         <div class="text-center">
-            <button class="btn btn-sm btn-success mt-1">Main</button>
-            <button class="btn btn-sm btn-primary ml-1 mt-1"><i class="fa fa-trash"></i></button>
+            <button [disabled]="photo.isMain"
+                    (click)="setMainPhoto(photo)"
+                    [ngClass]='photo.isMain ? "btn-outline-success active" : "btn-success"'
+                    class="btn btn-sm btn-success m-1">Main</button>
+            <button class="btn btn-sm btn-primary m-1"><i class="fa fa-trash"></i></button>
         </div>
     </div>
 </div>
