@@ -31,7 +31,7 @@
         <div class="dropdown"
              *ngIf="(accountService.currentUser$ | async) as user"
              dropdown>
-            <img src="{{user.photoUrl}}"
+            <img src="{{user.photoUrl || './assets/user.png'}}"
                  alt="{{user.username}}"
                  class="mr-2">
             <a class="dropdown-toggle text-light"
