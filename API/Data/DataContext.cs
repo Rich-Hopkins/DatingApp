@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +19,7 @@ namespace API.Data
             base.OnModelCreating(builder);
 
             builder.Entity<UserLike>()
-            .HasKey(k => new {k.SourceUserId, k.LikedUserId});
+            .HasKey(k => new { k.SourceUserId, k.LikedUserId });
 
             builder.Entity<UserLike>()
             .HasOne(s => s.SourceUser)
@@ -31,6 +33,5 @@ namespace API.Data
             .HasForeignKey(s => s.LikedUserId)
             .OnDelete(DeleteBehavior.Cascade);
         }
-
     }
 }
