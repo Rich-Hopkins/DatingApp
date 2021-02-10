@@ -10,6 +10,7 @@ import { MessageService } from 'src/app/_services/message.service';
 })
 export class MemberMessagesComponent implements OnInit {
   @Input() messages: Message[];
+  @Input() username: string;
 
   constructor() { }
 
