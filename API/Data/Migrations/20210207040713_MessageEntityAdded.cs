@@ -20,7 +20,7 @@ namespace API.Data.Migrations
                     Content = table.Column<string>(type: "TEXT", nullable: true),
                     DateRead = table.Column<DateTime>(type: "TEXT", nullable: true),
                     MessageSent = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    SenderDelted = table.Column<bool>(type: "INTEGER", nullable: false),
+                    SenderDeleted = table.Column<bool>(type: "INTEGER", nullable: false),
                     RecipientDeleted = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>

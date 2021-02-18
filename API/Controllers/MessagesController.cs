@@ -51,11 +51,11 @@ namespace API.Controllers
 
             if (message.Sender.UserName != username && message.Recipient.UserName != username) return Unauthorized();
 
-            if (message.Sender.UserName == username) message.SenderDelted = true;
+            if (message.Sender.UserName == username) message.SenderDeleted = true;
 
             if (message.Recipient.UserName == username) message.RecipientDeleted = true;
 
-            if (message.SenderDelted && message.RecipientDeleted) _unitOfWork.MessageRepository.DeleteMessage(message);
+            if (message.SenderDeleted && message.RecipientDeleted) _unitOfWork.MessageRepository.DeleteMessage(message);
 
             if (await _unitOfWork.Complete()) return Ok();
 
