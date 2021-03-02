@@ -22,7 +22,7 @@ namespace API.Data
             _context = context;
         }
 
-        public async Task<MemberDto> GetMemberAsync(string username, bool? isCurrentUser)
+        public async Task<MemberDto> GetMemberAsync(string username, bool isCurrentUser = false)
         {
             var query = _context.Users
                 .Where(x => x.UserName == username)
