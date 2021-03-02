@@ -41,14 +41,5 @@ namespace API.Data
         {
             _context.Photos.Remove(photo);
         }
-
-        public async Task<bool> UserHasMainPhoto(Photo photo)
-        {
-            var mainPhoto = await _context.Photos
-                .Where(p => p.IsMain)
-                .FirstOrDefaultAsync();
-            if (mainPhoto == null) return false;
-            return true;
-        }
     }
 }
