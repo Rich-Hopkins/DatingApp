@@ -33,16 +33,16 @@ namespace API.Data
             {
                 user.Photos.First().IsApproved = true;
                 user.UserName = user.UserName.ToLower();
-                await userManager.CreateAsync(user, "password");
+                await userManager.CreateAsync(user, "Pa$$w0rd");
                 await userManager.AddToRoleAsync(user, "Member");
             }
 
             var admin = new AppUser
             {
-                UserName = "admin"
+                UserName = "rich"
             };
 
-            await userManager.CreateAsync(admin, "password");
+            await userManager.CreateAsync(admin, "Pa$$w0rdsNeedStrength");
             await userManager.AddToRolesAsync(admin, new[] { "Admin", "Moderator" });
         }
     }
